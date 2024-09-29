@@ -11,6 +11,7 @@ def main():
     score = random.randint(MINIMUM_SCORE, MAXIMUM_SCORE)
     print(determine_level(score))
 
+
 def determine_level(score):
     """Determine the score level."""
     if score < MINIMUM_SCORE or score > MAXIMUM_SCORE:
