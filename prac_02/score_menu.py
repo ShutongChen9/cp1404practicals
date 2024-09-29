@@ -7,15 +7,16 @@ MENU = "(G)et a valid score\n(P)rint result\n(S)how stars\n(Q)uit"
 
 def main():
     """Get choice according to the menu and print the result."""
+    score = get_valid_score(MINIMUM_SCORE, MAXIMUM_SCORE)
     print(MENU)
     choice = input("Enter your choice: ").upper()
     while choice != "Q":
         if choice == "G":
-            get_valid_score(MINIMUM_SCORE, MAXIMUM_SCORE)
+            score = get_valid_score(MINIMUM_SCORE, MAXIMUM_SCORE)
         elif choice == "P":
-            print(determine_level(get_valid_score(MINIMUM_SCORE, MAXIMUM_SCORE)))
+            print(determine_level(score))
         elif choice == "S":
-            print(get_stars(get_valid_score(MINIMUM_SCORE, MAXIMUM_SCORE)))
+            print(get_stars(score))
         else:
             print("Invalid choice")
         print(MENU)
