@@ -12,8 +12,7 @@ def main():
     print(determine_level(score))
 
     # Add a new part to the bottom of your main function that generates a random score and prints the result.
-    score = random.randint(MINIMUM_SCORE, MAXIMUM_SCORE)
-    print(score, determine_level(score))
+    print(determine_level(random.randint(MINIMUM_SCORE, MAXIMUM_SCORE)))
 
 
 def determine_level(score):
