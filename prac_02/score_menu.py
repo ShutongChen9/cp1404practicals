@@ -34,9 +34,7 @@ def get_valid_score(low, high):
 
 def determine_level(score):
     """Determine score level."""
-    if score < MINIMUM_SCORE or score > MAXIMUM_SCORE:
-        return "Invalid score"
-    elif score < PASS_SCORE:
+    if score < PASS_SCORE:
         return "Bad"
     elif score < EXCELLENT_SCORE:
         return "Passable"
