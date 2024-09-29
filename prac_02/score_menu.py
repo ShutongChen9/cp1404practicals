@@ -16,7 +16,7 @@ def main():
         elif choice == "P":
             print(determine_level(score))
         elif choice == "S":
-            print(get_stars(score))
+            print_stars(score)
         else:
             print("Invalid choice")
         print(MENU)
@@ -43,9 +43,9 @@ def determine_level(score):
         return "Excellent"
 
 
-def get_stars(score):
-    """Get stars according to the score."""
-    return "*" * score
+def print_stars(score):
+    """Print stars according to the score."""
+    print("*" * score)
 
 
 main()
