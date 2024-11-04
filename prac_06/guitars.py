@@ -1,5 +1,5 @@
 """
-Word Occurrences
+Guitar program
 Estimate: 30 minutes
 Actual:   40 minutes
 """
