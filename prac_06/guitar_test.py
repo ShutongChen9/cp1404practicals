@@ -1,5 +1,5 @@
 """
-Word Occurrences
+Basic manual tests for Guitar class
 Estimate: 30 minutes
 Actual:   35 minutes
 """
