@@ -1,5 +1,5 @@
 """
-Word Occurrences
+Guitar class
 Estimate: 20 minutes
 Actual:   25 minutes
 """
