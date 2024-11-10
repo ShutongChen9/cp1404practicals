@@ -33,6 +33,34 @@ def main():
     display_guitars(guitars)
 
 
+def read_guitars_from_file(file_name):
+    """Read guitars from a CSV file and return a list of Guitar objects."""
+    guitars = []
+    try:
+        with open(file_name, 'r') as in_file:
+            reader = csv.reader(in_file)
+            for row in reader:
+                if row:  # Skip empty lines
+                    name, year, cost = row
+                    guitars.append(Guitar(name, int(year), float(cost)))
+    except FileNotFoundError:
+        print(f"{file_name} not found. Starting with an empty list.")
+    return guitars
+
+
+def write_guitars_to_file(file_name, guitars):
+    """Write the list of Guitar objects to a CSV file."""
+    with open(file_name, 'w', newline='') as out_file:
+        writer = csv.writer(out_file)
+        for guitar in guitars:
+            writer.writerow([guitar.name, guitar.year, guitar.cost])
+
+
+def display_guitars(guitars):
+    """Display the list of guitars."""
+    for guitar in guitars:
+        print(guitar)
+
 
 if __name__ == "__main__":
     main()
