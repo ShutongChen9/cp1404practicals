@@ -1,5 +1,7 @@
 """
 Guitar class
+Estimate: 20 minutes
+Actual:   15 minutes
 """
 
 from datetime import datetime
@@ -19,6 +21,10 @@ class Guitar:
         """Return a string representation of a Guitar."""
         return f"{self.name} ({self.year}) : ${self.cost:,.2f}"
 
+    def __lt__(self, other):
+        """Compare two Guitar objects by year."""
+        return self.year < other.year
+
     def get_age(self):
         """Get the age of a guitar based on the current_year."""
         current_year = datetime.now().year
@@ -27,3 +33,5 @@ class Guitar:
     def is_vintage(self):
         """Determine if a Guitar is considered vintage or not based on age."""
         return self.get_age() >= VINTAGE_AGE
+
+
