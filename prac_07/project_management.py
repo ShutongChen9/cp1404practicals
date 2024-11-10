@@ -68,6 +68,26 @@ def save_projects(projects, filename='projects.txt'):
                        f"{project.completion_percentage}\n")
     return projects
 
+def display_projects(projects):
+    """Display projects in two groups: incomplete and complete."""
+    print("Incomplete projects:")
+    incomplete_projects = [project for project in projects if not project.is_complete()]
+    for project in sorted(incomplete_projects):
+        print(f"  {project}")
+
+    print("Completed projects:")
+    completed_projects = [project for project in projects if project.is_complete()]
+    for project in sorted(completed_projects):
+        print(f"  {project}")
+
+
+def filter_projects_by_date(projects):
+    """Display projects that start after specified date."""
+    start_date= input("Show projects that start after date (dd/mm/yy): ")
+    date = datetime.strptime(start_date, "%d/%m/%Y").date()
+    filtered_projects = [project for project in projects if project.start_date >= date]
+    for project in sorted(filtered_projects, key=lambda x: x.start_date):
+        print(project)
 
 
 if __name__ == '__main__':
