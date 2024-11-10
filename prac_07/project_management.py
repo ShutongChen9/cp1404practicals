@@ -46,6 +46,29 @@ def main():
         save_projects(projects, "projects.txt")
     print("Thank you for using custom-built project management software.")
 
+def load_projects(filename='projects.txt'):
+    """Load projects from file."""
+    projects = []
+    with open(filename) as file:
+        file.readline()
+        for line in file:
+            parts = line.strip().split('\t')
+            project = Project(parts[0], parts[1], parts[2], parts[3], parts[4])
+            projects.append(project)
+    return projects
+
+
+def save_projects(projects, filename='projects.txt'):
+    """Save projects to file."""
+    with open(filename, 'w') as file:
+        file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
+        for project in projects:
+            file.write(f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t"
+                       f"{project.priority}\t{project.cost_estimate}\t"
+                       f"{project.completion_percentage}\n")
+    return projects
+
+
 
 if __name__ == '__main__':
     main()
