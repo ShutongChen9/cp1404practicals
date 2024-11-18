@@ -18,6 +18,9 @@ class BoxLayoutDemo(App):
         """Join hello with user input name."""
         self.root.ids.output_label.text = f"Hello {self.root.ids.input_name.text}"
 
-
+    def press_clear(self):
+        """Resets both text field and output label to blank."""
+        self.root.ids.output_label.text = ""
+        self.root.ids.input_name.text = ""
 
 BoxLayoutDemo().run()
